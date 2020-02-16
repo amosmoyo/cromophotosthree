@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
 
     const token = req.headers.authorization.split(' ')[1];
 
-    const decodedToken = jwt.verify(token, process.env.jwt_key);
+    const decodedToken = jwt.verify(token, "This-String-Should-Be-Longer-Than-You-Think");
 
     req.decodedTokenData = {
       email: decodedToken.email,
