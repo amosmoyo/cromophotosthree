@@ -50,7 +50,7 @@ export class AuthetificationService {
   ) { }
 
   signup(signup: object) {
-    this.http.post<{message: string, document: any}>(`${url}/signup`, signup)
+    this.http.post<{message: string, document: any}>(`/api/posts/signup`, signup)
     .subscribe(response => {
       this.snackBar.open('Your account was successfully created.You can login.', 'OK', {duration: 5000});
     }, error => {
@@ -60,7 +60,7 @@ export class AuthetificationService {
 
   login(login: object) {
 
-    this.http.post<{token: string, expiresIn: number, creatorId: string, creatorName: string}>(`${url}/login`, login)
+    this.http.post<{token: string, expiresIn: number, creatorId: string, creatorName: string}>(`/api/posts/login`, login)
     .subscribe( response => {
       const token = response.token;
 
