@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://localhost:8080/api'
+  url: 'mongodb+srv://amosmoyo:' + process.env.password + '@cluster0-spg3d.mongodb.net/cromophoto'
 };
 
 /*

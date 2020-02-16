@@ -138,7 +138,7 @@ export class AuthetificationService {
     localStorage.removeItem('creatorName');
   }
 
-  // get items
+  // get items  C:\Users\PROBOOK 440\AppData\Local\.meteor
   private getAuthData() {
     const tokenData = localStorage.getItem('token');
     const expiryData = localStorage.getItem('expiry');
