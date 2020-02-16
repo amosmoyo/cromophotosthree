@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
 
 
-const url = environment.url + '/posts';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +37,7 @@ export class PostsService {
    postForm.append('description', des);
    postForm.append('image', img, tit);
 
-   this.http.post<{message: string, document: any}>(`${url}`, postForm)
+   this.http.post<{message: string, document: any}>('/api/posts', postForm)
    .subscribe(responceData => {
      // this.posts.push(responceData.document);
     // this.postSubject.next({posts: Posts[], postCount: number});
@@ -49,7 +48,7 @@ export class PostsService {
   // read operation
   getAllPost(pgSize: number, currentPage: number ) {
     this.http.get<{message: string, documents: any, maxCount: number}>
-    (`${url}?pagesize=${pgSize}&page=${currentPage}`)
+    (`/api/posts?pagesize=${pgSize}&page=${currentPage}`)
     .pipe(
       map(response => {
         return {posts: response.documents.map(x => {
@@ -73,7 +72,7 @@ export class PostsService {
 
   // read operations
   getOnePost(id) {
-    return this.http.get<{message: string, document: any}>(`${url}/${id}`);
+    return this.http.get<{message: string, document: any}>(`/api/posts/${id}`);
   }
 
   // update operation
@@ -94,7 +93,7 @@ export class PostsService {
       };
     }
 
-    this.http.post<{message: string, document: any}>(`${url}/update/${Id}`, postForm)
+    this.http.post<{message: string, document: any}>(`/api/posts/update/${Id}`, postForm)
     .subscribe((responce) => {
      /* const newPost = [...this.posts];
       const indx = newPost.findIndex(x => x.id === responce.document._id);
@@ -118,7 +117,7 @@ export class PostsService {
 
   // delete operations
   delete(id) {
-    return this.http.get(`${url}/delete/${id}`);
+    return this.http.get(`/api/posts/delete/${id}`);
     /*.subscribe((response) => {
       const newPost = [...this.posts];
       const postRemain = newPost.filter(x => x.id !== id);
