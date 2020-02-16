@@ -7,6 +7,7 @@
         <input
           type="text"
           matInput
+          placeholder="enter new title"
           formControlName="title"
         >
         <mat-error *ngIf="title.invalid && (title.dirty || title.touched)">
@@ -37,7 +38,9 @@
         <textarea
           type="text"
           matInput
+          placeholder="enter new post description"
           formControlName="description"
+          rows="5"
         >
         </textarea>
         <mat-error *ngIf="description.invalid && (description.dirty || description.touched)">
@@ -48,7 +51,7 @@
       </mat-form-field>
 
       <button mat-raised-button type="submit" [disabled]="editForm.pristine || editForm.invalid" color="primary">
-         Save
+         Save post
       </button>
     </form>
   </mat-card>

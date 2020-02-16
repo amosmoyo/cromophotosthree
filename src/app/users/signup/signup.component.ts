@@ -22,8 +22,6 @@ export class SignupComponent implements OnInit {
       return;
     }
 
-    console.log(form.value.name, form.value.email, form.value.password);
-
     const signup = {
       name: form.value.name,
       email: form.value.email,

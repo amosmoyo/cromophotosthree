@@ -10,12 +10,13 @@ import { HomeComponent } from 'src/app/components/home/home.component';
 import { AboutComponent } from 'src/app/components/about/about.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'post', component: PostsComponent},
   {path: 'about', component: AboutComponent},
   {path: 'edit/:id', component: EditComponent, canActivate: [AuthGurds]},
   {path: 'create', component: CreateComponent, canActivate: [AuthGurds]},
-  {path: 'auth', loadChildren: 'src/app/users/user/user.module#UserModule'}
+  {path: 'auth', loadChildren: 'src/app/users/user/user.module#UserModule'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

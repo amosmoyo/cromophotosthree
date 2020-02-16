@@ -1,13 +1,13 @@
 <div>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="nav">
-    <a class="navbar-brand" routerLink='/' routerLinkActive='mat-accent'>CROMO</a>
+    <a class="navbar-brand" routerLink='/home' routerLinkActive='mat-accent'>CROMO</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
-            <a routerLink='/' class="nav-item nav-link active">{{title}}</a>
+            <a routerLink='/home' class="nav-item nav-link active">{{title}}</a>
             <a routerLink='post'  class="nav-item nav-link" *ngIf="isUserAuth">All Post</a>
             <a routerLink='about' class="nav-item nav-link">About</a>
             <a href="#" class="nav-item nav-link disabled" tabindex="-1">Contacts</a>
