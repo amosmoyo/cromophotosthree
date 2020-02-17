@@ -10,8 +10,7 @@ import { HomeComponent } from 'src/app/components/home/home.component';
 import { AboutComponent } from 'src/app/components/about/about.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', component: HomeComponent},
   {path: 'post', component: PostsComponent},
   {path: 'about', component: AboutComponent},
   {path: 'edit/:id', component: EditComponent, canActivate: [AuthGurds]},

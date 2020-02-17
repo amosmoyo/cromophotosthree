@@ -118,7 +118,7 @@ export class AuthetificationService {
     this.creatorID = null;
 
     this.clearAuthData();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   // localstorage
