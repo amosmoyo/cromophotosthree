@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'edit/:id', component: EditComponent, canActivate: [AuthGurds]},
   {path: 'create', component: CreateComponent, canActivate: [AuthGurds]},
-  {path: 'auth', loadChildren: 'src/app/users/user/user.module#UserModule'}
+  {path: 'auth', loadChildren: 'src/app/users/user/user.module#UserModule'},
   {path: '**', component: HomeComponent}
 ];
 
