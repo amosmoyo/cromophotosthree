@@ -17,6 +17,7 @@ server.listen(port);
 const http = require('http');
 
 const app = require('./backend/app');
+var path = require("path")
 
 const debug = require('debug');
 const express = require('express');
@@ -72,8 +73,7 @@ function onListen() {
 app.use(express.static(__dirname + '/dist/projectThree'));
 
 app.get('/*', function(req,res) {
-
-res.sendFile(path.join(__dirname+'/dist/projectThree/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/projectThree/index.html'));
 });
 
 app.set('port', port);
