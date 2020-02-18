@@ -69,6 +69,22 @@ function onListen() {
 }
 
 
+app.enable('trust proxy');
+
+app.use (function (req, res, next) {
+        if (req.secure) {
+                // request was via https, so do no special handling
+                next();
+        } else {
+                // request was via http, so redirect to https
+                res.redirect('https://' + req.headers.host + req.url);
+        }
+});
+
+// Allow static files in the /public directory to be served
+app.use(express.static(__dirname + '/public'));
+
+
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/projectThree'));
 
