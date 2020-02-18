@@ -20,7 +20,15 @@ connection.once('open', () => {
 });
 
 // set middleware
-app.use(cors());
+app.use(cors(
+  {
+    'allowedHeaders': ['sessionId', 'Content-Type'],
+    'exposedHeaders': ['sessionId'],
+    'origin': '*',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
+  }
+));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/images', express.static(path.join('backend/images')))
