@@ -36,7 +36,7 @@ function nomarlizePort( value ) {
   return false;
 }
 
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || process.env.VCAP_APP_PORT || '8080';
 
 function onError(err) {
   if (err.syscall !== "listen") {
