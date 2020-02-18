@@ -1,7 +1,9 @@
-const multer = require('multer')
+const multer = require('multer');
 
-// working with images
+// const cloudinary = require('cloudinary');
+// const cloudinaryStorage = require('multer-storage-cloudinary')
 
+// working with image
 const mimetypemap = {
   "image/png": "png",
   "image/jpeg": "jpg",
